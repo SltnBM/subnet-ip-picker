@@ -1,6 +1,10 @@
 # 📡 Subnet IP Picker
 A simple command-line tool to pick specific IP addresses from a given subnet. Supports selecting IPs by position number or retrieving the last usable IP. Built for educational and practical network addressing purposes.
 
+![Python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Requirements](https://img.shields.io/badge/requirements.txt-up%20to%20date-brightgreen)
+
 ## ✨ Features
 - 🔢 Retrieve specific IP by position number
 - 🔚 Retrieve the last usable IP in the subnet
