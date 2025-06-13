@@ -49,3 +49,6 @@ To exit the program, press `Ctrl+C` or type `exit` when prompted.
 
 ## Contributing
 Contributions are welcome. Feel free to open issues or submit pull requests for improvements.
+
+## License
+This project is licensed under the MIT License.
