@@ -1,6 +1,17 @@
 from netaddr import IPNetwork
 
+def ordinal(n):
+    if 10 <= n % 100 <= 20:
+        suffix = 'th'
+    else:
+        suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+    return f"{n}{suffix}"
+
 subnet = input("Enter the subnet (e.g., 192.168.0.0/22): ")
+
+if not subnet:
+    print("No subnet provided.")
+    exit()
 
 try:
     network = IPNetwork(subnet)
@@ -8,11 +19,7 @@ except Exception as e:
     print("Invalid subnet:", e)
     exit()
 
-try:
-    ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
-except ValueError:
-    print("Please enter a valid number!")
-    exit()
+ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
 
 hosts = list(network.iter_hosts())
 
@@ -23,9 +30,9 @@ else:
     try:
         ip_index = int(ip_input)
         if 0 < ip_index <= len(hosts):
-            print(f"The {ip_index}th IP in subnet {network.cidr} is: {hosts[ip_index - 1]}")
+            print(f"The {ordinal(ip_index)} IP in subnet {network.cidr} is: {hosts[ip_index - 1]}")
         else:
-            print(f"The {ip_index}th IP does not exist in this subnet. This subnet only has {len(hosts)} usable hosts.")
+            print(f"The {ordinal(ip_index)} IP does not exist in this subnet. This subnet only has {len(hosts)} usable hosts.")
     except ValueError:
         print("Invalid input. Please enter a number or 'last'.")
 
