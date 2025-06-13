@@ -37,7 +37,7 @@ def pick_ip_from_subnet():
             
             if ip_input.lower() == 'last':
                 selected_ip = hosts[-1]
-                print(f"The LAST usable IP in subnet {network.cidr} is: {selected_ip}")
+                print(f"The LAST usable IP in subnet {network.cidr} is: {selected_ip}\n")
             else:
                 try:
                     ip_index = int(ip_input)
