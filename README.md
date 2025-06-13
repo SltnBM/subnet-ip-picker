@@ -14,6 +14,12 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 
 Install dependencies by running:
 ```bash
+pip install -r requirements.txt
+```
+
+or
+
+```bash
 pip install netaddr
 ```
 
