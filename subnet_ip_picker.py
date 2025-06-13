@@ -10,6 +10,9 @@ def ordinal(n):
 def get_valid_subnet():
     while True:
         subnet = input("Enter the subnet (e.g., 192.168.0.0/22): ").strip()
+        if subnet.lower() == 'exit':
+            print("Exiting program.  Goodbye!")
+            exit()
         if not subnet:
             print("No subnet provided. Please try again.")
             continue
@@ -22,24 +25,31 @@ def get_valid_subnet():
             print(f"Invalid subnet format or value: {subnet}\n")
 
 def pick_ip_from_subnet():
-    while True:
-        network = get_valid_subnet()
-        hosts = list(network.iter_hosts())
+    try:
+        while True:
+            network = get_valid_subnet()
+            hosts = list(network.iter_hosts())
 
-        ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
-        
-        if ip_input.lower() == 'last':
-            selected_ip = hosts[-1]
-            print(f"The LAST usable IP in subnet {network.cidr} is: {selected_ip}")
-        else:
-            try:
-                ip_index = int(ip_input)
-                if 0 < ip_index <= len(hosts):
-                    print(f"The {ordinal(ip_index)} IP in subnet {network.cidr} is: {hosts[ip_index - 1]}\n")
-                else:
-                    print(f"The {ordinal(ip_index)} IP does not exist in this subnet. This subnet only has {len(hosts)} usable hosts.\n")
-            except ValueError:
-                print("Invalid input. Please enter a number or 'last'.")
+            ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
+            if ip_input.lower() == 'exit':
+                    print("Exiting program.")
+                    exit()
+            
+            if ip_input.lower() == 'last':
+                selected_ip = hosts[-1]
+                print(f"The LAST usable IP in subnet {network.cidr} is: {selected_ip}")
+            else:
+                try:
+                    ip_index = int(ip_input)
+                    if 0 < ip_index <= len(hosts):
+                        print(f"The {ordinal(ip_index)} IP in subnet {network.cidr} is: {hosts[ip_index - 1]}\n")
+                    else:
+                        print(f"The {ordinal(ip_index)} IP does not exist in this subnet. This subnet only has {len(hosts)} usable hosts.\n")
+                except ValueError:
+                    print("Invalid input. Please enter a number or 'last'.")
+    except KeyboardInterrupt:
+        print("\n\nProgram interrupted. Exiting gracefully.")
+        exit()
 
 if __name__ == "__main__":
     pick_ip_from_subnet()
