@@ -9,7 +9,7 @@ except Exception as e:
     exit()
 
 try:
-    ip_input = input("Enter the IP position you want (number or type 'last'): ").strip()
+    ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
 except ValueError:
     print("Please enter a valid number!")
     exit()
