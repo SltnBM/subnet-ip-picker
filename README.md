@@ -46,3 +46,6 @@ The LAST usable IP in subnet 192.168.1.0/24 is: 192.168.1.254
 ```
 
 To exit the program, press `Ctrl+C` or type `exit` when prompted.
+
+## Contributing
+Contributions are welcome. Feel free to open issues or submit pull requests for improvements.
