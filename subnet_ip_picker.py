@@ -7,18 +7,22 @@ def ordinal(n):
         suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
     return f"{n}{suffix}"
 
+def get_valid_subnet():
+    while True:
+        subnet = input("Enter the subnet (e.g., 192.168.0.0/22): ").strip()
+        if not subnet:
+            print("No subnet provided. Please try again.")
+            continue
+        if '/' not in subnet:
+            print("Subnet must include prefix (e.g., /24, /22, etc.). Please try again.")
+            continue
+        try:
+            return IPNetwork(subnet)
+        except Exception as e:
+            print("Invalid subnet:", e)
+
 def pick_ip_from_subnet():
-    subnet = input("Enter the subnet (e.g., 192.168.0.0/22): ")
-
-    if not subnet:
-        print("No subnet provided.")
-        exit()
-
-    try:
-        network = IPNetwork(subnet)
-    except Exception as e:
-        print("Invalid subnet:", e)
-        exit()
+    network = get_valid_subnet()
 
     ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
 
