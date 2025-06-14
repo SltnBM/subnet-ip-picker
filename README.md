@@ -22,10 +22,9 @@ Install dependencies by running:
 pip install -r requirements.txt
 ```
 
-or
-
+or manually:
 ```bash
-pip install netaddr
+pip install netaddr rich
 ```
 
 ## 🚀 How to Use
