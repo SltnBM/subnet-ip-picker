@@ -8,6 +8,7 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 ## ✨ Features
 - 🔢 Retrieve specific IP by position number
 - 🔚 Retrieve the last usable IP in the subnet
+- 🏷️ CLI argument support
 - 🛡️ Validates subnet format (requires CIDR prefix)
 - 👋 Graceful exit on Ctrl+C or typing `exit`
 - 🔄 Looping mode for continuous usage
@@ -44,7 +45,28 @@ python subnet_ip_picker.py
 ```
 
 ## 💻 Usage
-Example interaction:
+#### Option 1: With CLI arguments
+```bash
+python subnet_ip_picker.py -s <subnet> -p <position>
+```
+
+Example:
+```bash
+python subnet_ip_picker.py -s 192.168.1.0/24 -p 5
+```
+or
+
+```bash
+python subnet_ip_picker.py -s 192.168.1.0/24 -p last
+```
+
+#### Option 2: Interactive mode
+If no arguments are provided, the script will ask for input
+```bash
+python subnet_ip_picker.py
+```
+
+Example:
 ```plaintext
 Enter the subnet (e.g., 192.168.0.0/22): 192.168.1.0/24
 Enter IP position (number) or type 'last' for the last usable IP: 5
