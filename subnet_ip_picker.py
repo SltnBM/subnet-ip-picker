@@ -10,7 +10,18 @@ def ordinal(n):
 
 def validate_subnet(subnet):
     try:
-        return IPNetwork(subnet)
+        network = IPNetwork(subnet)
+        hosts = list(network.iter_hosts())
+    
+        if network.prefixlen == 31:
+            print(f"Note: Subnet {network.cidr} is a /31, used for point-to-point links. Both {hosts[0]} and {hosts[1]} are considered usable.\n")
+        elif network.prefixlen == 32:
+            print(f"Note: Subnet {network.cidr} is a /32, representing a single host address: {hosts[0]}\n")
+        elif len(hosts) < 2:
+            print(f"Warning: Subnet {network.cidr} has {len(hosts)} usable host(s).\n")
+        
+        return network
+        
     except Exception:
         print(f"Invalid subnet format or value: {subnet}\n")
         return None
@@ -19,6 +30,12 @@ def get_hosts(network):
     return list(network.iter_hosts())
 
 def display_ip(network, hosts, position):
+    if not hosts:
+        if network.prefixlen == 32:
+            print(f"Subnet {network.cidr} represents a single host: {network.ip}\n")
+        else:
+            print(f"Subnet {network.cidr} has no usable hosts.\n")
+        return
     if position.lower() == 'last':
         selected_ip = hosts[-1]
         print(f"The LAST usable IP in subnet {network.cidr} is: {selected_ip}\n")
