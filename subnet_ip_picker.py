@@ -50,9 +50,15 @@ def display_ip(network, hosts, position):
             print("Invalid input. Please enter a number or 'last'.")
 
 def run_interactive():
+    print("="*50)
+    print("Subnet IP Picker")
+    print("Type 'exit' anytime to quit.")
+    print("="*50)
+    
     try:
         while True:
             while True:
+                print("\n--- Subnet Input ---")
                 subnet = input("Enter the subnet (e.g., 192.168.0.0/22): ").replace(" ", "").strip()
                 if subnet.lower() == 'exit':
                     print("Exiting program. Goodbye!")
@@ -66,12 +72,14 @@ def run_interactive():
             
             hosts = get_hosts(network)
 
+            print("\n--- IP Position Input ---")
             ip_input = input("Enter IP position (number) or type 'last' for the last usable IP: ").strip()
             if ip_input.lower() == 'exit':
                 print("Exiting program. Goodbye!")
                 exit(0)
 
             display_ip(network, hosts, ip_input)
+            print("-"*50)
     except KeyboardInterrupt:
         print("\nProgram interrupted. Exiting.")
         exit(0)
