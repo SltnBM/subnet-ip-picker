@@ -70,7 +70,7 @@ Example:
 ```plaintext
 Enter the subnet (e.g., 192.168.0.0/22): 192.168.1.0/24
 Enter IP position (number) or type 'last' for the last usable IP: 5
-The 1st IP in subnet 192.168.1.0/24 is: 192.168.1.5
+The 5th IP in subnet 192.168.1.0/24 is: 192.168.1.5
 
 Enter the subnet (e.g., 192.168.0.0/22): 192.168.1.0/24
 Enter IP position (number) or type 'last' for the last usable IP: last
