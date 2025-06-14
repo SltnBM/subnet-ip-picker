@@ -68,13 +68,28 @@ python subnet_ip_picker.py
 
 Example:
 ```plaintext
-Enter the subnet (e.g., 192.168.0.0/22): 192.168.1.0/24
-Enter IP position (number) or type 'last' for the last usable IP: 5
-The 5th IP in subnet 192.168.1.0/24 is: 192.168.1.5
+==================================================
+Subnet IP Picker
+Type 'exit' anytime to quit.
+==================================================
 
-Enter the subnet (e.g., 192.168.0.0/22): 192.168.1.0/24
+--- Subnet Input ---
+Enter the subnet (e.g., 192.168.0.0/22): 110.71.0.0/18
+
+--- IP Position Input ---
+Enter IP position (number) or type 'last' for the last usable IP: 9000
+The 9000th IP in subnet 110.71.0.0/18 is: 110.71.35.40
+
+--------------------------------------------------
+
+--- Subnet Input ---
+Enter the subnet (e.g., 192.168.0.0/22): 110.71.0.0/18
+
+--- IP Position Input ---
 Enter IP position (number) or type 'last' for the last usable IP: last
-The LAST usable IP in subnet 192.168.1.0/24 is: 192.168.1.254
+The LAST usable IP in subnet 110.71.0.0/18 is: 110.71.63.254
+
+--------------------------------------------------
 ```
 
 To exit the program, press `Ctrl+C` or type `exit` when prompted.
