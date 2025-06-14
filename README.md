@@ -16,6 +16,7 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 ## 📋 Requirements
 1. 🐍 Python 3.6 or higher
 2. 📦 netaddr
+3. 🎨 rich
 
 Install dependencies by running:
 ```bash
