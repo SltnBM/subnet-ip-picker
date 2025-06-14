@@ -77,7 +77,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.subnet and args.position:
-        run_cli(args.subnet, args.position)
+        run_cli(args.subnet.replace(" ", "").strip(), args.position.strip())
     elif args.subnet or args.position:
         print("Both --subnet and --position must be provided together for non-interactive mode.\n")
         parser.print_help()
