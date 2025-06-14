@@ -68,8 +68,7 @@ python subnet_ip_picker.py
 Example:
 ```plaintext
 ==================================================
-Subnet IP Picker
-Type 'exit' anytime to quit.
+Subnet IP Picker — Type 'exit' anytime to quit.
 ==================================================
 
 --- Subnet Input ---
