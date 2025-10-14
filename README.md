@@ -5,6 +5,8 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Requirements](https://img.shields.io/badge/requirements.txt-up%20to%20date-brightgreen)
 
+---
+
 ## ✨ Features
 - 🔢 Retrieve specific IP by position number
 - 🔚 Retrieve the last usable IP in the subnet
@@ -12,6 +14,8 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 - 🛡️ Validates subnet format (requires CIDR prefix)
 - 👋 Graceful exit on Ctrl+C or typing `exit`
 - 🔄 Looping mode for continuous usage
+
+---
 
 ## 📋 Requirements
 1. 🐍 Python 3.6 or higher
@@ -28,6 +32,8 @@ or manually:
 pip install netaddr rich
 ```
 
+---
+
 ## 🚀 How to Use
 1. 🐍 Make sure you have Python installed (Python 3.6 or higher). Download it from [python.org](https://www.python.org/downloads/).
 2. 📥 Clone the repository:
@@ -43,6 +49,8 @@ cd subnet-ip-picker
 ```bash
 python subnet_ip_picker.py
 ```
+
+---
 
 ## 💻 Usage
 #### Option 1: With CLI arguments
@@ -93,11 +101,17 @@ The LAST usable IP in subnet 110.71.0.0/18 is: 110.71.63.254
 
 To exit the program, press `Ctrl+C` or type `exit` when prompted.
 
+---
+
 ## 🤝 Contributing
 Contributions are welcome. Feel free to open issues or submit pull requests for improvements.
 
+---
+
 ## 📬 Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sultan%20Badra-blue?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/sultan-badra)
+
+---
 
 ## 📜 License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
