@@ -1,4 +1,4 @@
-# 📡 Subnet IP Picker
+# Subnet IP Picker
 A simple command-line tool to pick specific IP addresses from a given subnet. Supports selecting IPs by position number or retrieving the last usable IP. Built for educational and practical network addressing purposes.
 
 ![Python](https://img.shields.io/badge/Python-3.6%2B-blue.svg)
@@ -7,7 +7,7 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 
 ---
 
-## ✨ Features
+## Features
 - Retrieve specific IP by position number
 - Retrieve the last usable IP in the subnet
 - CLI argument support
@@ -17,7 +17,7 @@ A simple command-line tool to pick specific IP addresses from a given subnet. Su
 
 ---
 
-## 📋 Requirements
+## Requirements
 1. Python 3.6 or higher
 2. netaddr
 3. rich
@@ -34,7 +34,7 @@ pip install netaddr rich
 
 ---
 
-## 🚀 How to Use
+## How to Use
 1. Make sure you have Python installed (Python 3.6 or higher). Download it from [python.org](https://www.python.org/downloads/).
 2. Clone the repository:
 ```bash
@@ -52,7 +52,7 @@ python subnet_ip_picker.py
 
 ---
 
-## 💻 Usage
+## Usage
 #### Option 1: With CLI arguments
 ```bash
 python subnet_ip_picker.py -s <subnet> -p <position>
@@ -103,15 +103,15 @@ To exit the program, press `Ctrl+C` or type `exit` when prompted.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 Contributions are welcome. Feel free to open issues or submit pull requests for improvements.
 
 ---
 
-## 📬 Connect with Me
+## Connect with Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Sultan%20Badra-blue?logo=linkedin&logoColor=white&style=flat-square)](https://www.linkedin.com/in/sultan-badra)
 
 ---
 
-## 📜 License
+## License
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
